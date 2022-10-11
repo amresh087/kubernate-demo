@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: loan-demo-app
+spec:
+  selector:
+    matchLabels:
+      app: loan-demo-app
+  replicas: 1 
+  template:
+    metadata:
+      labels:
+        app: loan-demo-app
+    spec:
+      containers:
+        - name: loan-demo-app
+          image: renuellen2018/renurepo:loan-demolatest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080 
